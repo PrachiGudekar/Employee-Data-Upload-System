@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Upload Results</h1>
+        </header>
+
+        <div class="results">
+            <h3>Summary</h3>
+            <p><strong>Successful Records:</strong> {{ results.successful_records }}</p>
+            <p><strong>Failed Records:</strong> {{ results.failed_records }}</p>
+            
+            {% if results.error_messages %}
+                <h3>Errors:</h3>
+                <ul>
+                    {% for message in results.error_messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <a href="{{ url_for('upload_file.upload_file_route') }}" class="btn">Upload another file</a>
+    </div>
+</body>
+</html>
