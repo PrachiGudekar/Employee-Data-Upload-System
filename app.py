@@ -9,7 +9,7 @@ def create_app():
     app = Flask(__name__)
     
     # Configure the application
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Sakshi%4013@localhost/mydatabase'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:********@localhost/mydatabase'
     app.config['SECRET_KEY'] = 'your_secret_key'  # Replace with a strong secret key in production
     app.config['DEBUG'] = True  # Set to False in production
     
